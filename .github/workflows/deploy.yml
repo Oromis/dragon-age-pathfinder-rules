@@ -33,6 +33,7 @@ jobs:
           mkdir -p content
           cp -R "notes/Dragon Age/Rules" content/Rules
           cp -R "notes/Dragon Age/Bilder" content/Bilder
+          cp -R "notes/Dragon Age/index.md" content/
       - uses: actions/setup-node@v4
         with:
           node-version: 22
