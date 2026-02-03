@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - v4
+  workflow_dispatch:
+  repository_dispatch:
+    types: [ notes-updated ]
  
 permissions:
   contents: read
