@@ -21,11 +21,11 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0 # Fetch all history for git info
       - name: Checkout notes repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: Oromis/Obsidian-PnP
           token: ${{ secrets.NOTES_REPO_TOKEN }}
@@ -37,7 +37,7 @@ jobs:
           cp -R "notes/Dragon Age/Rules" content/Rules
           cp -R "notes/Dragon Age/Bilder" content/Bilder
           cp -R "notes/Dragon Age/index.md" content/
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 22
       - name: Install Dependencies
@@ -45,7 +45,7 @@ jobs:
       - name: Build Quartz
         run: npx quartz build
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: public
  
